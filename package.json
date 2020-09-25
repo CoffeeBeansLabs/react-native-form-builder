@@ -1,0 +1,43 @@
+{
+  "name": "rn-dynamic-forms",
+  "version": "1.0.0",
+  "description": "A dynamic form builder for react-native apps",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "lint-fix": "eslint . --ext .js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeeBeansLabs/rn-dynamic-forms.git"
+  },
+  "keywords": [
+    "dynamic-form",
+    "react-native",
+    "reactnative",
+    "ui-components"
+  ],
+  "author": "Greeshma Pillai (https://github.com/pillaigrshma)",
+  "license": "MIT",
+  "homepage": "https://github.com/CoffeeBeansLabs/rn-dynamic-forms#readme",
+  "dependencies": {
+    "react-native-datepicker": "^1.7.2",
+    "react-native-dropdown-picker": "^3.6.8",
+    "react-native-elements": "^2.3.2",
+    "react-native-ratings": "^7.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-native": "^0.62.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
