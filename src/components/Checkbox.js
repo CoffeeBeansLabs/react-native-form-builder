@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckBox as ReactCheckbox } from 'react-native-elements';
 import { View } from 'react-native';
-import { color } from '../../styles';
+import { color } from '../styles';
 
 export default function Checkbox(props) {
   const { name, value, meta, style, onChangeInputValue } = props;

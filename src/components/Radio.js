@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
-import { radioButton } from "../../Constant";
+import { radioButton } from "../constant";
 
 export default function Radio(props) {
   const { name, value, meta, onChangeInputValue, isMandatory } = props;

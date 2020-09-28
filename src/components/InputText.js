@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View, StyleSheet, TextInput, Text
 } from 'react-native';
-import { color } from '../../styles';
+import { color } from '../styles';
 
 export default function InputText(props) {
   const { name, value, meta, style, onChangeInputValue, isMandatory } = props;
