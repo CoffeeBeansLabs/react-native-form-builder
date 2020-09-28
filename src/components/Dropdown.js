@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, Platform } from 'react-native';
 export default function DropDown(props) {
   const { name, meta, isMandatory, onChangeInputValue, index } = props;
 
-  const onSelectItem = item => onChangeInputValue(item);
+  const onSelectItem = item => onChangeInputValue(item.value);
 
   return (
     <View
