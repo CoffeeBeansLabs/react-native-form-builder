@@ -1,11 +1,11 @@
 import Image from './components/Image'
-import InputText from './components/DynamicForm/InputText';
-import Rating from './components/DynamicForm/Rating';
-import Checkbox from './components/DynamicForm/Checkbox';
-import Radio from './components/DynamicForm/Radio';
-import Dropdown from './components/DynamicForm/Dropdown';
-import Datepicker from './components/DynamicForm/DatePicker'
-import Text from './components/DynamicForm/Text';
+import InputText from './components/InputText';
+import Rating from './components/Rating';
+import Checkbox from './components/Checkbox';
+import Radio from './components/Radio';
+import Dropdown from './components/Dropdown';
+import Datepicker from './components/DatePicker'
+import Text from './components/Text';
 import { componentName } from './constant'
 
 const componentMap = {
