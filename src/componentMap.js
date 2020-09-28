@@ -49,3 +49,13 @@ export const getComponent = (id) => {
 export const getValidator = (id) => {
   return componentMap[id]?.validator || null;
 } 
+
+function inputTextValidator(text, inputType) {
+  const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+  if (inputType === 'email') {
+    return text && reg.test(text);
+  }
+
+  return true;
+};
