@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import ReactDatePicker from 'react-native-datepicker'
+import ReactDatePicker from 'react-native-datepicker';
 
-const DEFAULT_DATE_FORMAT = "YYYY-MM-DD";
-const CONFIRM_BUTTON_TEXT = "Confirm";
-const CANCEL_BUTTON_TEXT = "Cancel";
+const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
+const CONFIRM_BUTTON_TEXT = 'Confirm';
+const CANCEL_BUTTON_TEXT = 'Cancel';
 
 export default function Datepicker(props) {
-  const { name, value, meta, style, onChangeInputValue, isMandatory } = props;
+  const {
+    name, value, meta, style, onChangeInputValue, isMandatory
+  } = props;
 
   return (
     <View style={style}>
@@ -23,7 +25,7 @@ export default function Datepicker(props) {
         onDateChange={onChangeInputValue}
       />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   date: {
-    width: "97%",
+    width: '97%',
     marginLeft: 10,
   },
 });

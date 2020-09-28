@@ -1,9 +1,13 @@
 import React from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
-import { Text, View, StyleSheet, Platform } from 'react-native';
+import {
+  Text, View, StyleSheet, Platform
+} from 'react-native';
 
 export default function DropDown(props) {
-  const { name, meta, isMandatory, onChangeInputValue, index } = props;
+  const {
+    name, meta, isMandatory, onChangeInputValue, index
+  } = props;
 
   const onSelectItem = item => onChangeInputValue(item.value);
 
@@ -24,7 +28,7 @@ export default function DropDown(props) {
         placeholder="Select.."
       />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

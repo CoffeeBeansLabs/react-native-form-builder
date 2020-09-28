@@ -5,7 +5,9 @@ import {
 } from 'react-native';
 
 export default function Rating(props) {
-  const { name, meta, style, onChangeInputValue, isMandatory } = props;
+  const {
+    name, meta, style, onChangeInputValue, isMandatory
+  } = props;
 
   const recordRating = rating => onChangeInputValue(rating);
   return (
@@ -13,7 +15,7 @@ export default function Rating(props) {
       <Text style={styles.text}>{`${meta.label} ${isMandatory && '*'}`}</Text>
       <AirbnbRating
         onFinishRating={recordRating}
-        starContainerStyle={{...style, ...styles.rating}}
+        starContainerStyle={{ ...style, ...styles.rating }}
         defaultRating={0}
         showRating={false}
         size={30}

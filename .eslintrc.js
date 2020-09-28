@@ -12,6 +12,7 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'react/jsx-props-no-spreading': 'off',
     'no-eval': 'off',
+    'global-require': 'off',
     'react/destructuring-assignment': 'off', //TODO: Check this rule later.
     'react/state-in-constructor': 'off' 
  },

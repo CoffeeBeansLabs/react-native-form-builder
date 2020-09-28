@@ -1,11 +1,15 @@
-import React from "react";
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
-import { radioButton } from "../constant";
+import React from 'react';
+import {
+  View, StyleSheet, Text, Image, TouchableOpacity
+} from 'react-native';
+import { radioButton } from '../constant';
 
 export default function Radio(props) {
-  const { name, value, meta, onChangeInputValue, isMandatory } = props;
+  const {
+    name, value, meta, onChangeInputValue, isMandatory
+  } = props;
 
-  const onPress = (value) => () => onChangeInputValue(value);
+  const onPress = value => () => onChangeInputValue(value);
 
   return (
     <View key={name} style={styles.container}>
@@ -37,15 +41,15 @@ export default function Radio(props) {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius:2
+    borderRadius: 2
   },
   buttonContainer: {
-    flexDirection: "row"
+    flexDirection: 'row'
   },
   radioButtonImage: {
     height: 20,
     width: 20,
-    resizeMode:"contain"
+    resizeMode: 'contain'
   },
   text: {
     paddingLeft: 10,
@@ -60,9 +64,9 @@ const styles = StyleSheet.create({
     right: 10
   },
   radioContainer: {
-    paddingVertical:10,
-    width:"100%",
-    height:40,
-    paddingLeft:10,
+    paddingVertical: 10,
+    width: '100%',
+    height: 40,
+    paddingLeft: 10,
   }
 });

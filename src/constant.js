@@ -9,12 +9,12 @@ export const componentName = {
   READ_ONLY_TEXT: 'read-only-text',
   TEXT_AREA: 'input-textarea',
   TEXT_INPUT: 'input-text'
-}
+};
 
 export const radioButton = {
-  selected: require("./assets/selectedRadio.png"),
-  unselected: require("./assets/unselectedRadio.png")
-}
+  selected: require('./assets/selectedRadio.png'),
+  unselected: require('./assets/unselectedRadio.png')
+};
 
 // Need to remove isMandatory for below fields from template json.
 export const skipValidationForFields = ['image', 'image-with-link', 'read-only-text'];
