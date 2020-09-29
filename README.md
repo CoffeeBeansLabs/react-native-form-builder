@@ -1,6 +1,8 @@
 # react-native-form-builder
 
-A dynamic form builder for react-native apps.
+A basic form builder for react-native apps. Using a user defined template, it renders the required form elements.
+
+<img src="examplea/Demo.gif" width="250" height="500"/>
 
 ### Installation
 
