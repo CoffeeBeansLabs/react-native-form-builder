@@ -1,5 +1,5 @@
 {
-  "name": "@coffeebeanslabs/rn-dynamic-forms",
+  "name": "@coffeebeanslabs/react-native-form-builder",
   "version": "1.0.0",
   "description": "A dynamic form builder for react-native apps",
   "main": "./src/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoffeeBeansLabs/rn-dynamic-forms.git"
+    "url": "git+https://github.com/CoffeeBeansLabs/react-native-form-builder.git"
   },
   "keywords": [
     "dynamic-form",
@@ -20,9 +20,9 @@
   ],
   "author": "Greeshma Pillai (https://github.com/pillaigrshma)",
   "license": "MIT",
-  "homepage": "https://github.com/CoffeeBeansLabs/rn-dynamic-forms#readme",
+  "homepage": "https://github.com/CoffeeBeansLabs/react-native-form-builder#readme",
   "bugs": {
-    "url": "https://github.com/CoffeeBeansLabs/rn-dynamic-forms/issues"
+    "url": "https://github.com/CoffeeBeansLabs/react-native-form-builder/issues"
   },
   "dependencies": {
     "react-native-datepicker": "^1.7.2",
