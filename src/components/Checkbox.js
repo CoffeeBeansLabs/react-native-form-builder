@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { CheckBox as ReactCheckbox } from 'react-native-elements';
 import { View } from 'react-native';
 import { color } from '../styles';
@@ -22,3 +23,11 @@ export default function Checkbox(props) {
     </View>
   );
 }
+
+InputText.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  value: PropTypes.string,
+  style: PropTypes.object,
+  onChangeInputValue: PropTypes.func,
+};

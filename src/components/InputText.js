@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View, StyleSheet, TextInput, Text
 } from 'react-native';
@@ -41,3 +42,12 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   }),
 });
+
+InputText.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  value: PropTypes.string,
+  style: PropTypes.object,
+  onChangeInputValue: PropTypes.func,
+  isMandatory: PropTypes.string
+};

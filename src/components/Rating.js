@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { AirbnbRating } from 'react-native-ratings';
 import {
   View, StyleSheet, Text
@@ -32,3 +33,12 @@ const styles = StyleSheet.create({
   rating: {
   }
 });
+
+
+Rating.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  style: PropTypes.object,
+  onChangeInputValue: PropTypes.func,
+  isMandatory: PropTypes.string
+};

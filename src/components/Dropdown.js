@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {
   Text, View, StyleSheet, Platform
@@ -46,3 +47,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   }
 });
+
+InputText.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  index: PropTypes.number,
+  onChangeInputValue: PropTypes.func,
+  isMandatory: PropTypes.string
+};

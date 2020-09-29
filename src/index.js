@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   View, StyleSheet
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { Button } from 'react-native-elements';
 import { componentName, skipValidationForFields } from './constant';
 import { getComponent, getValidator } from './componentMap';
@@ -123,3 +124,8 @@ const styles = StyleSheet.create({
     margin: 20
   }
 });
+
+DynamicForm.propTypes = {
+  formTemplate: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};

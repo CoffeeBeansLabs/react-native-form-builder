@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View, StyleSheet, Text, Image, TouchableOpacity
 } from 'react-native';
@@ -70,3 +71,11 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   }
 });
+
+Radio.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  value: PropTypes.string,
+  onChangeInputValue: PropTypes.func,
+  isMandatory: PropTypes.string
+};

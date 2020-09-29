@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View, TouchableOpacity, StyleSheet, Image as ReactImage, Linking
 } from 'react-native';
@@ -30,3 +31,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
 });
+
+InputText.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  style: PropTypes.object,
+};

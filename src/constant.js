@@ -16,5 +16,5 @@ export const radioButton = {
   unselected: require('./assets/unselectedRadio.png')
 };
 
-// Need to remove isMandatory for below fields from template json.
+// TODO: Need to remove isMandatory for below fields from template json.
 export const skipValidationForFields = ['image', 'image-with-link', 'read-only-text'];

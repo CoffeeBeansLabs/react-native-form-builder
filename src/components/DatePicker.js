@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, StyleSheet, Text } from 'react-native';
 import ReactDatePicker from 'react-native-datepicker';
 
@@ -37,3 +38,12 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 });
+
+InputText.propTypes = {
+  name: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  value: PropTypes.string,
+  style: PropTypes.object,
+  onChangeInputValue: PropTypes.func,
+  isMandatory: PropTypes.string
+};
