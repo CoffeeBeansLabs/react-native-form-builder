@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   }
 });
 
-InputText.propTypes = {
+DropDown.propTypes = {
   name: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
   index: PropTypes.number,

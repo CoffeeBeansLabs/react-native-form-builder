@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
 });
 
-InputText.propTypes = {
+Datepicker.propTypes = {
   name: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
   value: PropTypes.string,

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
 });
 
-InputText.propTypes = {
+Image.propTypes = {
   name: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
   style: PropTypes.object,

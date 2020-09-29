@@ -24,7 +24,7 @@ export default function Checkbox(props) {
   );
 }
 
-InputText.propTypes = {
+Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
   value: PropTypes.string,

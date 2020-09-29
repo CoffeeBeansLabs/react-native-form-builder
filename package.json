@@ -16,7 +16,10 @@
     "dynamic-form",
     "react-native",
     "reactnative",
-    "ui-components"
+    "ui-components",
+    "form-builder",
+    "ios",
+    "android"
   ],
   "author": "Greeshma Pillai (https://github.com/pillaigrshma)",
   "license": "MIT",
