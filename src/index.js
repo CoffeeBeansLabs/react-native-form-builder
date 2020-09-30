@@ -13,6 +13,7 @@ export default function DynamicForm({ formTemplate, onSubmit }) {
   const mandatoryFields = formTemplate.data.filter(data => data.is_mandatory);
 
   useEffect(() => {
+    formTemplate.data.sort((a, b) => a.index - b.index);
     setFormFields({
       ...formFields,
       ...setDefaultForFields()
@@ -20,7 +21,6 @@ export default function DynamicForm({ formTemplate, onSubmit }) {
   }, []);
 
   useEffect(() => {
-    formTemplate.data.sort((a, b) => a.index - b.index);
     const isValid = checkAllMandatoryFields();
     setValid(isValid);
   }, [JSON.stringify(formFields)]);
