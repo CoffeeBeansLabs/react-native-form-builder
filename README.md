@@ -2,7 +2,7 @@
 
 A basic form builder for react-native apps. Using a user defined template, it renders the required form elements.
 
-<img src="examples/Demo.gif" width="300" height="600"/>
+<img src="https://user-images.githubusercontent.com/35795619/94670831-aebf0580-0330-11eb-9e59-8589fcf4d4fe.gif" width="300" height="600"/>
 
 ### Installation
 
@@ -111,7 +111,35 @@ The component takes following props:
 | formTemplate        | Yes       | Object  | A template representing form components to render (see Form Template for more info) |
 | onSubmit        | Yes       | Function  | Callback method when the user clicks on submit button |
 
-### [Publish on npm](https://www.npmjs.com/package/np)
-```shell
-$ np
-```
+
+#### Form Template
+
+Following properties are used in every template object representing a form element to be rendered:
+| Property        | Required  | Type   | Purpose  |
+| ------------|-----------| -------| -------|
+| component        | Yes       | String  | The name of form component to be rendered (check below for list). |
+| index        | Yes       | Number  | The placement index of the form component. |
+| field_name        | Yes       | String  | Name of the form field. |
+| is_mandatory        | No       | String  | Specifies if a form field is to be mandatorily filled. Until all mandatory fields are not provided by the user, the Submit button remains disabled|
+| meta        | Yes       | Object  | Holds component specific props like label, placeholder, value etc. |
+| style        | No       | Object  | Custom styles to be applied (Not supported for all components)|
+
+
+Following form components are available:
+- image
+- input-checkbox
+- input-date
+- input-dropdown
+- input-radio
+- input-text (also supports multiline)
+- rating
+- read-only-text
+
+*Checkout the example [here](https://github.com/CoffeeBeansLabs/react-native-form-builder/tree/master/examples/sample.js).*
+
+
+### Feedback
+
+Feel free to open a new Issue with a feature request or report a bug or submit a PR.
+
+Thank you!
