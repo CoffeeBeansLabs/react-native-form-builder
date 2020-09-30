@@ -20,7 +20,7 @@ export default function DropDown(props) {
         Platform.OS === 'ios' && styles.overrideOtherComponent(index)
       ]}
     >
-      <Text style={styles.text}>{`${meta.text} ${isMandatory && '*'}`}</Text>
+      <Text style={styles.text}>{`${meta.text} ${isMandatory ? '*' : ''}`}</Text>
       <DropDownPicker
         items={meta.items}
         itemStyle={styles.itemStyle}
@@ -53,5 +53,5 @@ DropDown.propTypes = {
   meta: PropTypes.object.isRequired,
   index: PropTypes.number,
   onChangeInputValue: PropTypes.func,
-  isMandatory: PropTypes.string
+  isMandatory: PropTypes.bool
 };

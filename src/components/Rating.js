@@ -13,10 +13,11 @@ export default function Rating(props) {
   const recordRating = rating => onChangeInputValue(rating);
   return (
     <View key={name}>
-      <Text style={styles.text}>{`${meta.label} ${isMandatory && '*'}`}</Text>
+      <Text style={styles.text}>{`${meta.label} ${isMandatory ? '*' : ''}`}</Text>
       <AirbnbRating
         onFinishRating={recordRating}
         starContainerStyle={{ ...style, ...styles.rating }}
+        count={meta.count || 5}
         defaultRating={0}
         showRating={false}
         size={30}
@@ -40,5 +41,5 @@ Rating.propTypes = {
   meta: PropTypes.object.isRequired,
   style: PropTypes.object,
   onChangeInputValue: PropTypes.func,
-  isMandatory: PropTypes.string
+  isMandatory: PropTypes.bool
 };

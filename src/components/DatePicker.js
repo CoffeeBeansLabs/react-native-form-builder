@@ -14,7 +14,7 @@ export default function Datepicker(props) {
 
   return (
     <View style={style}>
-      <Text style={styles.text}>{`${meta.text || meta.title} ${isMandatory && '*'}`}</Text>
+      <Text style={styles.text}>{`${meta.text || meta.title} ${isMandatory ? '*' : ''}`}</Text>
       <ReactDatePicker
         key={name}
         style={styles.date}
@@ -45,5 +45,5 @@ Datepicker.propTypes = {
   value: PropTypes.string,
   style: PropTypes.object,
   onChangeInputValue: PropTypes.func,
-  isMandatory: PropTypes.string
+  isMandatory: PropTypes.bool
 };

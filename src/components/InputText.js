@@ -12,9 +12,9 @@ export default function InputText(props) {
 
   return (
     <View key={name}>
-      <Text style={styles.text}>{`${meta.label} ${isMandatory && '*'}`}</Text>
+      <Text style={styles.text}>{`${meta.label} ${isMandatory ? '*' : ''}`}</Text>
       <TextInput
-        style={{ ...style, ...styles.textBox(meta.multiline) }}
+        style={{ ...style, ...styles.textBox(meta.multiline, meta.numberOfLines) }}
         value={value || ''}
         underlineColorAndroid="transparent"
         onChangeText={onChangeInputValue}
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10
   },
-  textBox: multiline => ({
-    height: !multiline ? 40 : 80,
+  textBox: (multiline, numberOfLines) => ({
+    height: !multiline ? 40 : 40 * numberOfLines,
     borderColor: color.GREY,
     borderWidth: 1,
     borderRadius: 3,
@@ -49,5 +49,5 @@ InputText.propTypes = {
   value: PropTypes.string,
   style: PropTypes.object,
   onChangeInputValue: PropTypes.func,
-  isMandatory: PropTypes.string
+  isMandatory: PropTypes.bool
 };

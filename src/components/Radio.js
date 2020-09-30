@@ -14,7 +14,7 @@ export default function Radio(props) {
 
   return (
     <View key={name} style={styles.container}>
-      <Text style={styles.heading}>{`${meta.text} ${isMandatory && '*'}`}</Text>
+      <Text style={styles.heading}>{`${meta.text} ${isMandatory ? '*' : ''}`}</Text>
       {meta.data.map((item, index) => (
         <View key={index} style={styles.radioContainer}>
           <TouchableOpacity
@@ -77,5 +77,5 @@ Radio.propTypes = {
   meta: PropTypes.object.isRequired,
   value: PropTypes.string,
   onChangeInputValue: PropTypes.func,
-  isMandatory: PropTypes.string
+  isMandatory: PropTypes.bool
 };
