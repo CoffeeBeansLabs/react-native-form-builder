@@ -20,6 +20,7 @@ export default function DynamicForm({ formTemplate, onSubmit }) {
   }, []);
 
   useEffect(() => {
+    formTemplate.data.sort((a, b) => a.index - b.index);
     const isValid = checkAllMandatoryFields();
     setValid(isValid);
   }, [JSON.stringify(formFields)]);
@@ -98,7 +99,7 @@ export default function DynamicForm({ formTemplate, onSubmit }) {
             style={element.style}
             value={getValue(element)}
             onChangeInputValue={onChangeInputValue(element.field_name, element.component)}
-            isMandatory={element.is_mandatory}
+            isMandatory={element.is_mandatory === 'true'}
           />
           );
         })
