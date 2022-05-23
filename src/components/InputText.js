@@ -14,7 +14,7 @@ export default function InputText(props) {
     <View key={name}>
       <Text style={styles.text}>{`${meta.label} ${isMandatory ? '*' : ''}`}</Text>
       <TextInput
-        style={{ ...style, ...styles.textBox(meta.multiline, meta.numberOfLines) }}
+        style={{ ...styles.textBox(meta.multiline, meta.numberOfLines), ...style }}
         value={value || ''}
         underlineColorAndroid="transparent"
         onChangeText={onChangeInputValue}
