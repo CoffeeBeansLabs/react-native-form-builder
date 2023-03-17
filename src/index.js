@@ -7,7 +7,7 @@ import { Button } from 'react-native-elements';
 import { componentName, skipValidationForFields } from './constant';
 import { getComponent, getValidator } from './componentMap';
 
-export default function DynamicForm({ formTemplate, onSubmit }) {
+export default function DynamicForm({ formTemplate, onSubmit, buttonStyles }) {
   const [formFields, setFormFields] = useState({});
   const [isValidFormFields, setValid] = useState(false);
   const mandatoryFields = formTemplate.data.filter(data => data.is_mandatory);
@@ -107,7 +107,7 @@ export default function DynamicForm({ formTemplate, onSubmit }) {
       <Button
         accessibilityLabel="submit-button"
         title="Submit"
-        buttonStyle={styles.button}
+        buttonStyle={[styles.button, buttonStyles]}
         onPress={onSumbitButtonPress}
         disabled={!isValidFormFields}
       />
