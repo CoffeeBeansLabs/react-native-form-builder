@@ -8,13 +8,19 @@ export const componentName = {
   RATING: 'rating',
   READ_ONLY_TEXT: 'read-only-text',
   TEXT_AREA: 'input-textarea',
-  TEXT_INPUT: 'input-text'
+  TEXT_INPUT: 'input-text',
+  FILE: 'file',
 };
 
 export const radioButton = {
   selected: require('./assets/selectedRadio.png'),
-  unselected: require('./assets/unselectedRadio.png')
+  unselected: require('./assets/unselectedRadio.png'),
 };
 
 // TODO: Need to remove isMandatory for below fields from template json.
-export const skipValidationForFields = ['image', 'image-with-link', 'read-only-text'];
+export const skipValidationForFields = [
+  'image',
+  'image-with-link',
+  'read-only-text',
+  'file',
+];

@@ -6,18 +6,19 @@ import Radio from './components/Radio';
 import Dropdown from './components/Dropdown';
 import Datepicker from './components/DatePicker';
 import Text from './components/Text';
+import File from './components/File';
 import { componentName } from './constant';
 
 const componentMap = {
   [componentName.IMAGE]: {
-    component: Image
+    component: Image,
   },
   [componentName.IMAGE_WITH_LINK]: {
     component: Image,
   },
   [componentName.TEXT_INPUT]: {
     component: InputText,
-    validator: inputTextValidator
+    validator: inputTextValidator,
   },
   [componentName.RATING]: {
     component: Rating,
@@ -39,12 +40,15 @@ const componentMap = {
   },
   [componentName.READ_ONLY_TEXT]: {
     component: Text,
-  }
+  },
+  [componentName.FILE]: {
+    component: File,
+  },
 };
 
-export const getComponent = id => componentMap[id]?.component || null;
+export const getComponent = (id) => componentMap[id]?.component || null;
 
-export const getValidator = id => componentMap[id]?.validator || null;
+export const getValidator = (id) => componentMap[id]?.validator || null;
 
 function inputTextValidator(text, inputType) {
   const reg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-\.])+.([A-Za-z]{2,4})$/;
