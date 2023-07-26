@@ -34,7 +34,7 @@ export default function DropDown(props) {
 				zIndex={99}
 				onSelectItem={onSelectItem}
 				placeholder="Select.."
-				dropDownDirection="top"
+				dropDownDirection="TOP"
 			/>
 		</View>
 	);
