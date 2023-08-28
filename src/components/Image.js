@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  View, TouchableOpacity, StyleSheet, Image as ReactImage, Linking
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  Image as ReactImage,
+  Linking,
 } from 'react-native';
 
 export default function Image(props) {
@@ -28,7 +32,7 @@ export default function Image(props) {
 const styles = StyleSheet.create({
   image: {
     resizeMode: 'contain',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
 });
 

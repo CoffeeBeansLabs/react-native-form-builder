@@ -15,12 +15,12 @@ export default function Text(props) {
 const styles = StyleSheet.create({
   text: {
     marginLeft: 10,
-    marginTop: 10
+    marginTop: 10,
   },
 });
 
 Text.propTypes = {
   name: PropTypes.string.isRequired,
   meta: PropTypes.object.isRequired,
-  style: PropTypes.object
+  style: PropTypes.object,
 };

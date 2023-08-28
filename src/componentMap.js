@@ -6,7 +6,6 @@ import Radio from './components/Radio';
 import Dropdown from './components/Dropdown';
 import Datepicker from './components/DatePicker';
 import Text from './components/Text';
-import File from './components/File';
 import { componentName } from './constant';
 
 const componentMap = {
@@ -40,9 +39,6 @@ const componentMap = {
   },
   [componentName.READ_ONLY_TEXT]: {
     component: Text,
-  },
-  [componentName.FILE]: {
-    component: File,
   },
 };
 

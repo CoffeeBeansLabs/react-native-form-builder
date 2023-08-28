@@ -5,11 +5,9 @@ import { View } from 'react-native';
 import { color } from '../styles';
 
 export default function Checkbox(props) {
-  const {
-    name, value, meta, style, onChangeInputValue
-  } = props;
+  const { name, value, meta, style, onChangeInputValue } = props;
 
-  const onIconPress = value => () => onChangeInputValue(value);
+  const onIconPress = (value) => () => onChangeInputValue(value);
 
   return (
     <View key={name}>

@@ -9,7 +9,6 @@ export const componentName = {
   READ_ONLY_TEXT: 'read-only-text',
   TEXT_AREA: 'input-textarea',
   TEXT_INPUT: 'input-text',
-  FILE: 'file',
 };
 
 export const radioButton = {
@@ -22,5 +21,4 @@ export const skipValidationForFields = [
   'image',
   'image-with-link',
   'read-only-text',
-  'file',
 ];

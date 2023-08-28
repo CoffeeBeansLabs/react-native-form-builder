@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  View, StyleSheet, Text, Image, TouchableOpacity
-} from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { radioButton } from '../constant';
 
 export default function Radio(props) {
-  const {
-    name, value, meta, onChangeInputValue, isMandatory
-  } = props;
+  const { name, value, meta, onChangeInputValue, isMandatory } = props;
 
-  const onPress = value => () => onChangeInputValue(value);
+  const onPress = (value) => () => onChangeInputValue(value);
 
   return (
     <View key={name} style={styles.container}>
-      <Text style={styles.heading}>{`${meta.text} ${isMandatory ? '*' : ''}`}</Text>
+      <Text style={styles.heading}>{`${meta.text} ${
+        isMandatory ? '*' : ''
+      }`}</Text>
       {meta.data.map((item, index) => (
         <View key={index} style={styles.radioContainer}>
           <TouchableOpacity
@@ -42,34 +40,34 @@ export default function Radio(props) {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 2
+    borderRadius: 2,
   },
   buttonContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   radioButtonImage: {
     height: 20,
     width: 20,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   text: {
     paddingLeft: 10,
   },
   heading: {
-    margin: 10
+    margin: 10,
   },
   slop: {
     top: 10,
     bottom: 10,
     left: 10,
-    right: 10
+    right: 10,
   },
   radioContainer: {
     paddingVertical: 10,
     width: '100%',
     height: 40,
     paddingLeft: 10,
-  }
+  },
 });
 
 Radio.propTypes = {
@@ -77,5 +75,5 @@ Radio.propTypes = {
   meta: PropTypes.object.isRequired,
   value: PropTypes.string,
   onChangeInputValue: PropTypes.func,
-  isMandatory: PropTypes.bool
+  isMandatory: PropTypes.bool,
 };
