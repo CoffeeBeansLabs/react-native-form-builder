@@ -30,9 +30,10 @@
 	"dependencies": {
 		"prop-types": "^15.7.2",
 		"react-native-date-picker": "^4.2.13",
-		"react-native-dropdown-picker": "5.4.6",
 		"react-native-elements": "3.4.3",
-		"react-native-ratings": "^7.3.0"
+		"react-native-ratings": "^7.3.0",
+		"react-native-sectioned-multi-select": "^0.10.0",
+		"react-native-vector-icons": "9.2.0"
 	},
 	"devDependencies": {
 		"babel-eslint": "^10.1.0",
