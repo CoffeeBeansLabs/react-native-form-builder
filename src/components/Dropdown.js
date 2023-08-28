@@ -10,9 +10,10 @@ import {
 import SectionedMultiSelect from 'react-native-sectioned-multi-select';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+const { width } = Dimensions.get('window');
+
 export default function Dropdown(props) {
   const { meta, isMandatory, onChangeInputValue, style } = props;
-  const { width } = Dimensions.get('window');
 
   const [items, setItems] = useState(meta.items);
   const [selectedItems, setSelectedItems] = useState(meta.selectedItems || []);
