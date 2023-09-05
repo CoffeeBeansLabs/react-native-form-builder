@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     borderBottomWidth: 1,
     borderColor: '#C3C6CA',
-    padding: 5,
     alignSelf: 'center',
   },
   title: {
