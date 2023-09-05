@@ -20,7 +20,7 @@ export default function Radio(props) {
         >
           <TouchableOpacity
             onPressIn={onPress(item.value || item.label)}
-            hitSlop={[style?.slop, styles.slop]}
+            hitSlop={style?.slop || styles.slop}
             style={[style?.button, styles.button]}
             key={index}
           >
