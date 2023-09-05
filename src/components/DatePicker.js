@@ -10,9 +10,6 @@ import {
 } from 'react-native';
 import DatePicker from 'react-native-date-picker';
 
-const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
-const CONFIRM_BUTTON_TEXT = 'Confirm';
-const CANCEL_BUTTON_TEXT = 'Cancel';
 const { width, height } = Dimensions.get('window');
 
 export default function Datepicker(props) {
@@ -52,15 +49,16 @@ export default function Datepicker(props) {
           modal={true}
           open={show}
           date={dateValue}
-          mode={'date'}
+          mode={meta.mode || 'date'}
           is24hourSource={true}
           onConfirm={(date) => {
             setShow(false);
             let dateString = date.toISOString(); // Convert date object to string
             onChangeInputValue(dateString); // Pass string to parent function
           }}
-          confirmText={CONFIRM_BUTTON_TEXT}
-          cancelText={CANCEL_BUTTON_TEXT}
+          title={meta.selectTitle}
+          confirmText={meta.confirmText}
+          cancelText={meta.cancelText}
           onCancel={() => {
             setShow(false);
           }}

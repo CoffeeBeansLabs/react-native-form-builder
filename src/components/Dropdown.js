@@ -67,15 +67,15 @@ export default function Dropdown(props) {
         <SectionedMultiSelect
           IconRenderer={Icon}
           single={meta.single}
-          selectText={meta.placeholder || 'Select ...'}
           displayKey="name"
           uniqueKey="id"
           subKey="children"
           alwaysShowSelectText={true}
           renderSelectText={renderSelectText}
+          selectText={meta.placeholder || 'Select ...'}
           confirmText={meta.confirmText || 'Ok'}
-          searchPlaceholderText={meta.searchPlaceholder || 'Search'}
           removeAllText={meta.removeAllText || 'Clear'}
+          searchPlaceholderText={meta.searchPlaceholder || 'Search'}
           showDropDowns={true}
           readOnlyHeadings={meta.readOnlyHeadings || false}
           showRemoveAll={true}
