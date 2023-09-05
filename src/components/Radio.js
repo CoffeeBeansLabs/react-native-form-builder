@@ -1,7 +1,16 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import React from 'react';
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { radioButton } from '../constant';
+
+const { width, height } = Dimensions.get('window');
 
 export default function Radio(props) {
   const { name, value, meta, style, onChangeInputValue, isMandatory } = props;
@@ -57,9 +66,13 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingLeft: 10,
+    fontSize: (width / 100) * 3.2,
+    fontFamily: 'SFProDisplay-Medium',
   },
   title: {
     marginTop: 10,
+    fontSize: (width / 100) * 4,
+    fontFamily: 'SFProDisplay-Medium',
   },
   slop: {
     top: 10,

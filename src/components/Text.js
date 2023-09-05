@@ -1,6 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Text as ReactText } from 'react-native';
+import React from 'react';
+import { Dimensions, Text as ReactText, StyleSheet, View } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default function Text(props) {
   const { name, meta, style } = props;
@@ -16,6 +18,8 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: 10,
     marginTop: 10,
+    fontSize: (width / 100) * 4,
+    fontFamily: 'SFProDisplay-Medium',
   },
 });
 

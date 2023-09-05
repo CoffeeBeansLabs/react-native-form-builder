@@ -1,11 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Image as ReactImage,
   Linking,
+  Image as ReactImage,
+  StyleSheet,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 
 export default function Image(props) {

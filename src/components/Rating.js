@@ -1,7 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
-import { View, StyleSheet, Text } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 export default function Rating(props) {
   const { name, meta, style, onChangeInputValue, isMandatory } = props;
@@ -28,6 +30,8 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: 10,
     marginTop: 10,
+    fontSize: (width / 100) * 4,
+    fontFamily: 'SFProDisplay-Medium',
   },
   rating: {},
 });

@@ -1,7 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, TextInput, Text } from 'react-native';
+import React from 'react';
+import { Dimensions, StyleSheet, Text, TextInput, View } from 'react-native';
 import { color } from '../styles';
+
+const { width, height } = Dimensions.get('window');
 
 export default function InputText(props) {
   const { name, value, meta, style, onChangeInputValue, isMandatory } = props;
@@ -36,6 +38,8 @@ const styles = StyleSheet.create({
   },
   text: {
     marginTop: 10,
+    fontSize: (width / 100) * 4,
+    fontFamily: 'SFProDisplay-Medium',
   },
   textBox: (multiline, numberOfLines) => ({
     height: !multiline ? 40 : 40 * numberOfLines,
