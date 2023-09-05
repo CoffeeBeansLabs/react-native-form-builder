@@ -7,15 +7,15 @@ export default function InputText(props) {
   const { name, value, meta, style, onChangeInputValue, isMandatory } = props;
 
   return (
-    <View key={name}>
-      <Text style={styles.text}>{`${meta.label} ${
+    <View style={[style?.container, styles.container]} key={name}>
+      <Text style={[style?.text, styles.text]}>{`${meta.label} ${
         isMandatory ? '*' : ''
       }`}</Text>
       <TextInput
-        style={{
-          ...styles.textBox(meta.multiline, meta.numberOfLines),
-          ...style,
-        }}
+        style={[
+          style?.inputText,
+          styles.textBox(meta.multiline, meta.numberOfLines),
+        ]}
         value={value || ''}
         underlineColorAndroid="transparent"
         onChangeText={onChangeInputValue}
@@ -30,8 +30,11 @@ export default function InputText(props) {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: '95%',
+    alignSelf: 'center',
+  },
   text: {
-    marginLeft: 10,
     marginTop: 10,
   },
   textBox: (multiline, numberOfLines) => ({
@@ -39,7 +42,6 @@ const styles = StyleSheet.create({
     borderColor: color.GREY,
     borderWidth: 1,
     borderRadius: 3,
-    margin: 10,
     paddingLeft: 10,
   }),
 });

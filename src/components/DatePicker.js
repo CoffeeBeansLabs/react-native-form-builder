@@ -64,7 +64,7 @@ export default function Datepicker(props) {
           onCancel={() => {
             setShow(false);
           }}
-          style={styles.dateInput}
+          style={[style?.dateInput, styles.dateInput]}
         />
       </TouchableOpacity>
     </View>
@@ -73,7 +73,7 @@ export default function Datepicker(props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
+    width: '95%',
     height: 50,
     marginVertical: 4,
     borderBottomWidth: 1,

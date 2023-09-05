@@ -7,7 +7,7 @@ export default function Text(props) {
 
   return (
     <View key={name}>
-      <ReactText style={{ ...style, ...styles.text }}>{meta.text}</ReactText>
+      <ReactText style={[style?.text, styles.text]}>{meta.text}</ReactText>
     </View>
   );
 }

@@ -50,9 +50,9 @@ export default function Dropdown(props) {
   };
 
   return (
-    <View pointerEvents={'auto'} style={[styles.container, style?.container]}>
+    <View pointerEvents={'auto'} style={[style?.container, styles.container]}>
       <TouchableOpacity style={{ padding: 0 }}>
-        <Text style={[styles.title, style?.title]}>
+        <Text style={[style?.title, styles.title]}>
           {`${meta.text} ${isMandatory ? '*' : ''}`}
         </Text>
       </TouchableOpacity>
@@ -94,27 +94,7 @@ export default function Dropdown(props) {
           }
           colors={style?.colors}
           maxItems={meta.maxItems}
-          styles={[
-            {
-              itemText: {
-                fontWeight: 'normal',
-              },
-              selectedItemText: {
-                fontWeight: 'normal',
-              },
-              item: {
-                paddingHorizontal: 10,
-              },
-              selectedItem: {
-                backgroundColor: 'rgb(250,250,250)',
-              },
-              selectToggleText: {
-                fontSize: (width / 100) * 4,
-                marginLeft: -10,
-              },
-            },
-            style?.select,
-          ]}
+          styles={[style?.select, styles.select]}
         />
       </View>
     </View>
@@ -123,7 +103,7 @@ export default function Dropdown(props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
+    width: '95%',
     height: 50,
     marginVertical: 4,
     borderBottomWidth: 1,
@@ -135,6 +115,24 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontSize: (width / 100) * 4,
     fontFamily: 'SFProDisplay-Medium',
+  },
+  select: {
+    itemText: {
+      fontWeight: 'normal',
+    },
+    selectedItemText: {
+      fontWeight: 'normal',
+    },
+    item: {
+      paddingHorizontal: 10,
+    },
+    selectedItem: {
+      backgroundColor: 'rgb(250,250,250)',
+    },
+    selectToggleText: {
+      fontSize: (width / 100) * 4,
+      marginLeft: -10,
+    },
   },
 });
 

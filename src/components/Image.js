@@ -21,7 +21,7 @@ export default function Image(props) {
     <View key={name}>
       <TouchableOpacity onPress={handlePress} activeOpacity={0.8}>
         <ReactImage
-          style={{ ...style, ...styles.image }}
+          style={[style?.image, styles.image]}
           source={{ uri: meta.source }}
         />
       </TouchableOpacity>

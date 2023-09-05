@@ -4,33 +4,36 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { radioButton } from '../constant';
 
 export default function Radio(props) {
-  const { name, value, meta, onChangeInputValue, isMandatory } = props;
+  const { name, value, meta, style, onChangeInputValue, isMandatory } = props;
 
   const onPress = (value) => () => onChangeInputValue(value);
 
   return (
-    <View key={name} style={styles.container}>
-      <Text style={styles.heading}>{`${meta.text} ${
+    <View key={name} style={[style?.container, styles.container]}>
+      <Text style={[style?.title, styles.title]}>{`${meta.text} ${
         isMandatory ? '*' : ''
       }`}</Text>
       {meta.data.map((item, index) => (
-        <View key={index} style={styles.radioContainer}>
+        <View
+          key={index}
+          style={[style?.radioContainer, styles.radioContainer]}
+        >
           <TouchableOpacity
             onPressIn={onPress(item.value || item.label)}
-            hitSlop={styles.slop}
-            style={styles.buttonContainer}
+            hitSlop={[style?.slop, styles.slop]}
+            style={[style?.button, styles.button]}
             key={index}
           >
             <Image
               accessibilityLabel={`choose-option-${item.label}`}
-              style={styles.radioButtonImage}
+              style={[style?.radioImage, styles.radioImage]}
               source={
                 value === (item.value || item.label)
                   ? radioButton.selected
                   : radioButton.unselected
               }
             />
-            <Text style={styles.text}>{item.label}</Text>
+            <Text style={[style?.text, styles.text]}>{item.label}</Text>
           </TouchableOpacity>
         </View>
       ))}
@@ -40,12 +43,14 @@ export default function Radio(props) {
 
 const styles = StyleSheet.create({
   container: {
+    width: '95%',
+    alignSelf: 'center',
     borderRadius: 2,
   },
-  buttonContainer: {
+  button: {
     flexDirection: 'row',
   },
-  radioButtonImage: {
+  radioImage: {
     height: 20,
     width: 20,
     resizeMode: 'contain',
@@ -53,8 +58,8 @@ const styles = StyleSheet.create({
   text: {
     paddingLeft: 10,
   },
-  heading: {
-    margin: 10,
+  title: {
+    marginTop: 10,
   },
   slop: {
     top: 10,
