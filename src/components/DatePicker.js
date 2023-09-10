@@ -53,7 +53,7 @@ export default function Datepicker(props) {
           is24hourSource={true}
           onConfirm={(date) => {
             setShow(false);
-            let dateString = date.toISOString(); // Convert date object to string
+            let dateString = moment(date).format('YYYY-MM-DD'); // Convert date object to string
             onChangeInputValue(dateString); // Pass string to parent function
           }}
           title={meta.selectTitle}
