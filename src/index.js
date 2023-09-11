@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Button } from 'react-native-elements';
-import { componentName, skipValidationForFields } from './constant';
 import { getComponent, getValidator } from './componentMap';
+import { skipValidationForFields } from './constant';
 
 export default function DynamicForm({ formTemplate, onSubmit, buttonStyles }) {
   const [formFields, setFormFields] = useState({});
@@ -37,23 +37,10 @@ export default function DynamicForm({ formTemplate, onSubmit, buttonStyles }) {
   const setDefaultForFields = () => {
     const fields = {};
     formTemplate.data.forEach((data) => {
-      if (data.component === componentName.CHECKBOX) {
-        fields[data.field_name] = {
-          value: false,
-          inputType: data.component,
-        };
-      }
-      if (data.component === componentName.DATE_PICKER) {
-        const today = new Date();
-        const currentDate =
-          `${today.getFullYear()}-${`0${today.getMonth() + 1}`.slice(-2)}-` +
-          `${today.getDate()}`;
-
-        fields[data.field_name] = {
-          value: currentDate,
-          inputType: data.component,
-        };
-      }
+      fields[data.field_name] = {
+        value: data.value,
+        inputType: data.component,
+      };
     });
 
     return fields;
