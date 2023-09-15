@@ -50,6 +50,7 @@ export default function Datepicker(props) {
           open={show}
           date={dateValue}
           mode={meta.mode || 'date'}
+          locale={meta.locale}
           is24hourSource={true}
           onConfirm={(date) => {
             setShow(false);
