@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet, Text } from 'react-native';
 import ReactDatePicker from 'react-native-datepicker';
 
+const DEFAULT_DATETIME_FORMAT = 'YYYY-MM-DD h:mm a';
 const DEFAULT_DATE_FORMAT = 'YYYY-MM-DD';
 const CONFIRM_BUTTON_TEXT = 'Confirm';
 const CANCEL_BUTTON_TEXT = 'Cancel';
@@ -19,11 +20,12 @@ export default function Datepicker(props) {
         key={name}
         style={styles.date}
         date={value}
-        mode="date"
-        format={DEFAULT_DATE_FORMAT}
+        mode={meta.isDateTime ? "datetime" : "date"}
+        format={meta.isDateTime ? DEFAULT_DATETIME_FORMAT : DEFAULT_DATE_FORMAT}
         confirmBtnText={CONFIRM_BUTTON_TEXT}
         cancelBtnText={CANCEL_BUTTON_TEXT}
         onDateChange={onChangeInputValue}
+        disabled={meta.disabled === true ? true : false}
       />
     </View>
   );

@@ -7,19 +7,27 @@ import { color } from '../styles';
 
 export default function InputText(props) {
   const {
-    name, value, meta, style, onChangeInputValue, isMandatory
+    name, value, meta, style, onChangeInputValue, isMandatory, imgView, inputStyle
   } = props;
 
   return (
-    <View key={name}>
-      <Text style={styles.text}>{`${meta.label} ${isMandatory ? '*' : ''}`}</Text>
+    <View key={name} style={[meta.containerStyle ,{}]}>
+      {imgView ? 
+      <View style={styles.yellowMainView}>
+        {imgView()}
+        <View style={styles.yellowView}>
+        <Text style={[styles.yellowTxt]}>{`${meta.label} ${isMandatory ? '*' : ''}`}</Text>
+        </View>
+        </View> :
+        <Text style={[styles.text, meta.textStyle]}>{`${meta.label} ${isMandatory ? '*' : ''}`}</Text>
+      }
       <TextInput
-        style={{ ...styles.textBox(meta.multiline, meta.numberOfLines), ...style }}
+        style={{ ...styles.textBox(meta.multiline, meta.numberOfLines), ...style, ...inputStyle }}
         value={value || ''}
         underlineColorAndroid="transparent"
         onChangeText={onChangeInputValue}
         accessibilityLabel={`input-${meta.label}`}
-        editable
+        editable={meta.editable}
         placeholder={meta.placeholder}
         multiline={meta.multiline}
         numberOfLines={meta.numberOfLines}
@@ -41,6 +49,25 @@ const styles = StyleSheet.create({
     margin: 10,
     paddingLeft: 10
   }),
+  yellowMainView: {
+    flexDirection: 'row',
+  },
+  yellowView: {
+    backgroundColor: '#FDDE02',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+    borderTopLeftRadius: 0,
+    width: '80%',
+    marginLeft: 10,
+  },
+  yellowTxt: {
+    fontFamily: 'Nunito-Regular',
+    fontSize: 20,
+    color: '#444444',
+    fontWeight: '600',
+    // fontStyle: 'italic',
+  }
 });
 
 InputText.propTypes = {

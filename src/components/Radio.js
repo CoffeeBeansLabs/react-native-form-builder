@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  View, StyleSheet, Text, Image, TouchableOpacity
+  View, StyleSheet, Text, Image, TouchableOpacity,
+  ScrollView,
+  Dimensions
 } from 'react-native';
 import { radioButton } from '../constant';
 
@@ -10,18 +12,27 @@ export default function Radio(props) {
     name, value, meta, onChangeInputValue, isMandatory
   } = props;
 
+  const deviceWidth = Dimensions.get('window').width;
   const onPress = value => () => onChangeInputValue(value);
 
   return (
-    <View key={name} style={styles.container}>
-      <Text style={styles.heading}>{`${meta.text} ${isMandatory ? '*' : ''}`}</Text>
+    <View key={name} style={[styles.container, props.style]}>
+      <Text style={[styles.heading, meta.headingStyle]}>{`${meta.text} ${isMandatory ? '*' : ''}`}</Text>
+      
+      <ScrollView disabled={meta.isScrollable ? false : true} horizontal={meta.isHorizontal} 
+      showsHorizontalScrollIndicator={false}
+      style={{ borderWidth:0, width:'100%'}} 
+      contentContainerStyle={{ width:'auto'}}>
+
       {meta.data.map((item, index) => (
-        <View key={index} style={styles.radioContainer}>
+        <View key={index} style={styles.radioContainer} >
+          
           <TouchableOpacity
             onPressIn={onPress(item.value || item.label)}
             hitSlop={styles.slop}
             style={styles.buttonContainer}
             key={index}
+            disabled={meta.disabled}
           >
             <Image
               accessibilityLabel={`choose-option-${item.label}`}
@@ -32,10 +43,11 @@ export default function Radio(props) {
                   : radioButton.unselected
               }
             />
-            <Text style={styles.text}>{item.label}</Text>
+            <Text style={[styles.text, meta.optionTextStyle]}>{item.label}</Text>
           </TouchableOpacity>
         </View>
       ))}
+      </ScrollView>
     </View>
   );
 }
@@ -66,7 +78,7 @@ const styles = StyleSheet.create({
   },
   radioContainer: {
     paddingVertical: 10,
-    width: '100%',
+    width: 'auto',
     height: 40,
     paddingLeft: 10,
   }
